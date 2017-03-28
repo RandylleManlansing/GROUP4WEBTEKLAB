@@ -21,8 +21,25 @@
 			</div>
 			<span onclick="openNav()" class="menu">&#9776;</span>
 			<span class="add">&#10011;</span>
+			
+			<!-- addition starts here -->
+			<article id="form">
+           			<a href="#" data-button="close" class = "closebtn">&times;</a>
+
+			
+				<form id="apparatusrecord" onsubmit="return false">
+					Name:<br><input type="text" name="name"><br><br>
+					Type:<br><input type="text" name="type"><br><br>
+					Price:<br><input type="text" name="price"><br><br>
+					<br><br>
+					<input type="button" name="submit" value="Save" onclick="saveData()">
+				</form>
+          		 </article>		
+			<!-- addition ends here -->
+			
+			
 			<h1 class="title">Apparatus Checker</h1>
-			<h3 class="page-name">Apparatuses</h2>
+			<h3 class="page-name">Apparatuses</h3>
 			
 		</div>
 		</header>
@@ -37,16 +54,7 @@
 			</select>
 		</div>
 		<div class="main">
-			<div class="record">
-				<h1>Apparatus: <span id="name"></span></h1>
-				Name:<p id="name"></p>
-				Type:<p id="type"></p>
-				Price:<p id="price"></p>
-			</div>
-
-			Diplay Apparatus: <br><br>
-			<input type="text" id="apparatusID" value="">
-			<input type="button" onclick="displayNote();" value="Display Data" />
+			<!-- removed this content -->
 		</div>
 	</body>
 </html>
