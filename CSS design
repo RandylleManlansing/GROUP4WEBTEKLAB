@@ -1,0 +1,185 @@
+html{
+    overflow: hidden;
+    height: 100%;    
+}
+
+body{
+	 margin:auto;
+	 padding:0;
+	 width: 100%;
+     max-width:2500px;
+     overflow:auto;
+     height:100%;
+	 background-color: #D8FFDC;
+	 background-image: url('bg.png');
+	 background-size:cover;
+}
+
+/**Navigation Bar**/
+#header{
+	 position: fixed;
+	 overflow:hidden;
+	 margin:auto;
+	 height:200px;
+     width: 100%;
+     max-width:2500px;
+	 z-index:99;
+     background-color:#81A385;
+	 text-align: center;
+	 top: 0px;
+	 color: white;
+}
+
+.title{
+	font-family: Momotaro;
+	margin:0;
+	padding:0;
+	border:0;
+	padding-top: 5px;
+}
+
+.big{
+	font-size: 5.9rem;
+}
+
+.small{
+	font-size: 4.2rem;
+}
+
+.page-name{
+	font-family: ABOVE;
+    font-size: 2.6rem;
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+/**Menu Icon**/
+.menu{
+	padding-top:10px;
+	padding-left: 5px;
+	width:10%;
+    height:40%;
+	float: left;
+	font-size:30px;
+}
+
+/**Add Icon**/
+.add {
+	padding-top:10px;
+	padding-right: 5px;
+	width:10%;
+    height:40%;
+	float: right;
+    font-size:1.5rem;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: white;
+    display: block;
+	text-align: left;
+	font-family: ABOVE;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 2rem;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 2rem;}
+}
+/**Second Layer**/
+#second-layer{
+	 position: fixed;
+	 background-size:100%;
+	 overflow:hidden;
+	 margin:auto;
+	 height:40px;
+     width: 100%;
+     max-width:2500px;
+	 z-index:85;
+     background-color:#305041;
+	 text-align: left;
+	 padding-top: 200px;
+	 display: inline-flex;
+	 box-shadow: 0px 0px 30px #000000;
+	 font-family: ABOVE;
+	 font-size: 15px;
+}
+
+#category{
+	 padding-top: 5px;
+	 padding-left: 20px;
+	 padding-right: 5px;
+	 margin:0;
+	 border:0;
+	 color: white;
+	 margin:0;
+	 border:0;
+}
+
+/**body**/
+.main{
+	 position:static;
+	 padding-top: 70px;
+	 margin-top:160px;
+	 width:100%;
+	 overflow:hidden;
+}
+
+@font-face {
+   font-family: Actonia;
+   src: url('Actonia.ttf');
+}
+
+@font-face {
+   font-family: ABOVE;
+   src: url('ABOVE.ttf');
+}
+
+@font-face {
+   font-family: Momotaro;
+   src: url('Momotaro.ttf');
+}
+
+
+.logo{
+	height:60px;
+	width:60px;
+	padding: 10px;
+}
+
+hr{
+	color: white;
+}
+
+#apparatuslist{
+    top:0;
+	margin: 0;
+	border: 0;
+	padding: 0;
+    text-align: center;
+    font-family: above;
+    font-size: 1.5rem;
+}
