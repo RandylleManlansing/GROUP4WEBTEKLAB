@@ -316,3 +316,7 @@ var apparatusArray = new Array();
 	"price": "null",
 	"stock": "null"
 }]);
+
+localStorage.setItem("apparatusArray", JSON.stringify(apparatusArray));
+retrievedData = localStorage.getItem("apparatusArray");
+var data = JSON.parse(retrievedData);
