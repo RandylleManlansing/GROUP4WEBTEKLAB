@@ -29,3 +29,7 @@ function saveApparatus() {
         
             localStorage.setItem(Aname, jsonString);
 }
+
+// addition to saveApparatus function to work
+(function(event){saveApparatus()
+})
