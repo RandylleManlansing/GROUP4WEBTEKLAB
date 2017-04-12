@@ -1,0 +1,394 @@
+{
+"apparatusArray": [  
+        {
+        "name": "Adapter", 
+         "category": "physics", 
+         "type": "electrical device",
+         "stock": "100", 
+         "price": "null" 
+        },
+    
+        {
+        "name": "Alcoholmeters",
+         "category": "physics",
+         "type": "electrical device",
+         "stock": "100", 
+         "price": "null"
+        },
+    
+        {
+        "name": "Beaker", 
+         "category": "biology",
+         "type": "glassware", 
+         "stock": "100", 
+         "price": "null"
+        },
+    
+        {
+        "name": "Buchner Funnel",
+         "category": "chemistry",
+         "type": "filtartion",
+         "stock": "100",
+         "price": "null"
+        },
+    
+        {
+        "name": "Burette", 
+         "category": "physics/chemistry",
+         "type": "glassware",
+         "stock": "100",
+         "price": "null"
+        },
+    
+        {
+        "name": "Burette Clamp", 
+         "category": "physics/chemistry", 
+         "type": "holder", 
+         "stock": "100", 
+         "price": "null"
+        },
+    
+        {
+        "name": "Centrifuge Tube",
+        "category": "biology",
+        "type": "container",
+        "stock": "100",
+        "price": "null"
+        },
+    
+        {
+        "name": "Clevenger flask",
+        "category": "biology",
+        "type": "glassware", 
+        "stock": "100", 
+        "price": "null"
+        },
+    
+        {
+        "name": "Clavenger tube", 
+        "category": "biology", 
+        "type": "oil extractor",
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Culture tube", 
+        "category": "biology", 
+        "type": "glassware", 
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Distillation flask",
+        "category": "chemistry", 
+        "type": "separator", 
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Evaporating dish", 
+        "type": "heatings", 
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Florence Flask",
+        "category": "chemistry/biology",
+        "type": "glassware", 
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Glass Pipete Holder", 
+        "category": "chemistry", 
+        "type": "media dispenser",
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Graduated Cylinder", 
+        "category": "chemistry", 
+        "type": "measuring", 
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Iron clamp (big)", 
+        "category": "physics/chemistry", 
+        "type": "holder", 
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Iron clamp (small)",  
+        "category": "physics/chemistry",
+        "type": "holder", 
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Iron ring",  
+        "category": "physics/chemistry", 
+        "type": "holder", 
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Knife", 
+        "category": "physics/biology/chemistry",
+        "type": "cutting", "stock": "100", 
+        "price": "null"
+        },
+    
+        {
+        "name": "Perculator tube",
+        "category": "biology",
+        "type": "brewing", 
+        "stock": "100", 
+        "price": "null"
+        },
+    
+        {
+        "name": "Petri Dish", 
+        "category": "biology", 
+        "type": "glassware", 
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Pippete",
+        "category": "physics/chemistry", 
+        "type": "media dispenser",
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Plastic Funnel", 
+        "category": "chemistry", 
+        "type": "filtration", 
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Quartz", 
+        "category": "physics/chemistry",
+        "type": "glassware", 
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Reagant bottles",
+        "category": "physics/chemistry",
+        "type": "media bottles",
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Receiver flask", 
+        "category": "chemistry/biology", 
+        "type": "filtration", 
+        "stock": "100", 
+        "price": "null"
+        },
+    
+        {
+        "name": "Rotary Evaporating flask",
+        "category": "chemistry/biology", 
+        "type": "glassware", 
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Screw capped test tube", 
+        "category": "biology", 
+        "type": "glassware", 
+        "stock": "100", 
+        "price": "null"
+        },
+    
+        {
+        "name": "Seperatory Funnel",
+        "category": "chemistry",
+        "type": "filtration", 
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Serological pipette", 
+        "category": "chemistry",
+        "type": "media dispenser", 
+        "stock": "100", 
+        "price": "null"
+        },
+    
+        {
+        "name": "Soxhlet Apparatus",  
+        "category": "physics", 
+        "type": "extractor", 
+        "stock": "100", 
+        "price": "null"
+        },
+    
+        {
+        "name": "Soxhlet Apparatus (complete set)", 
+        "category": "physics", 
+        "type": "extractor", 
+        "stock": "100", 
+        "price": "null"
+        },
+    
+        {
+        "name": "Soxhlet clamp", 
+        "category": "physics", 
+        "type": "holder", 
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "spoon", 
+        "category": "physics/chemistry", 
+        "type": "stirring/measuring", 
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Staining dish", 
+        "category": "biology", 
+        "type": "staining",
+        "stock": "100", 
+        "price": "null"
+        },
+    
+        {
+        "name": "Stirring bar", 
+        "category": "physics/chemistry/biology",
+        "type": "stirring",
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Supelclean ENVI",
+        "category": "physics/chemistry", 
+        "type": "glassware", 
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Supelclean LC", 
+        "category": "chemistry/physics",
+        "type": "glassware", 
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Test tube",
+        "category": "chemistry/biology",
+        "type": "measuring/glassware",
+        "stock": "100", 
+        "price": "null"
+        },
+    
+        {
+        "name": "Test tube rack", 
+        "category": "chemistry/biology", 
+        "type": "holder", 
+        "stock": "100", 
+        "price": "null"
+        },
+    
+        {
+        "name": "Test tube rack (small)",
+        "category": "chemistry/biology", 
+        "type": "holder", 
+        "stock": "100", 
+        "price": "null"
+        },
+    
+        {
+        "name": "Test tube with cap",
+        "category": "chemistry/biology", 
+        "type": "measuring",
+        "stock": "100", 
+        "price": "null"
+        },
+    
+        {
+        "name": "Thistle Tube",
+        "category": "biology", 
+        "type": "glassware", 
+        "stock": "100", 
+        "price": "null"
+        },
+
+        {
+        "name": "Volumetric Flask", 
+        "category": "chemistry/biology",
+        "type": "glassware",
+        "stock": "100", 
+        "price": "null"
+        },
+        {
+        "name": "Volumetric Pipette", 
+        "category": "chemistry", 
+        "type": "media dispenser", 
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Wash bottle",  
+        "category": "physics", 
+        "type": "container", 
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Wash Glass", 
+        "category": "chemistry", 
+        "type": "glassware", 
+        "stock": "100",  
+        "price": "null"
+        },
+    
+        {
+        "name": "Weighing bottles", 
+        "category": "physics/chemistry", 
+        "type": "weighing", 
+        "stock": "100", 
+        "price": "null"
+        },
+    
+        {
+        "name": "Wire gauze",
+        "category": "physics/chemistry/biology", 
+        "type": "holder", 
+        "stock": "100", 
+        "price": "null"
+        } 
+
+    ]
+}
+
