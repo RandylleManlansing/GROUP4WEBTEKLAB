@@ -33,3 +33,14 @@ function saveApparatus() {
 // addition to saveApparatus function to work
 (function(event){saveApparatus()
 })
+
+//displaying the added function
+function displayNote() {
+            var Aname = document.getElementById("apparatusID").value;
+            var n = JSON.parse(localStorage.getItem(Aname));
+            document.getElementById("name").innerHTML = Aname;
+            document.getElementById("categ").innerHTML = n[Aname].categ;
+            document.getElementById("type").innerHTML = n[Aname].type;
+            document.getElementById("stock").innerHTML = n[Aname].stock;
+            document.getElementById("price").innerHTML = n[Aname].price;
+        }
