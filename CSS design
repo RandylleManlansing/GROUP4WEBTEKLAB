@@ -15,7 +15,8 @@ body{
 	 background-size:cover;
 }
 
-/**Navigation Bar**/
+/**over-all**/
+/**Navigation**/
 #header{
 	 position: fixed;
 	 overflow:hidden;
@@ -54,7 +55,6 @@ body{
 	border:0;
 }
 
-/**Menu Icon**/
 .menu{
 	padding-top:10px;
 	padding-left: 5px;
@@ -64,7 +64,6 @@ body{
 	font-size:30px;
 }
 
-/**Add Icon**/
 .add {
 	padding-top:10px;
 	padding-right: 5px;
@@ -78,7 +77,7 @@ body{
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 9;
     top: 0;
     left: 0;
     background-color: #111;
@@ -109,6 +108,7 @@ body{
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 2rem;}
 }
+
 /**Second Layer**/
 #second-layer{
 	 position: fixed;
@@ -128,29 +128,14 @@ body{
 	 font-size: 15px;
 }
 
-#category{
-	 padding-top: 5px;
-	 padding-left: 20px;
-	 padding-right: 5px;
-	 margin:0;
-	 border:0;
-	 color: white;
-	 margin:0;
-	 border:0;
-}
-
 /**body**/
 .main{
 	 position:static;
-	 padding-top: 70px;
+	 padding-top: 100px;
 	 margin-top:160px;
 	 width:100%;
-	 overflow:hidden;
-}
-
-@font-face {
-   font-family: Actonia;
-   src: url('Actonia.ttf');
+	 overflow:auto;
+	 text-align: center;
 }
 
 @font-face {
@@ -163,10 +148,19 @@ body{
    src: url('Momotaro.ttf');
 }
 
-
+#category{
+	 padding-top: 5px;
+	 padding-left: 20px;
+	 padding-right: 5px;
+	 margin:0;
+	 border:0;
+	 color: white;
+	 margin:0;
+	 border:0;
+}
 .logo{
-	height:60px;
-	width:60px;
+	height:100px;
+	width:100px;
 	padding: 10px;
 }
 
@@ -176,6 +170,8 @@ hr{
 
 #apparatuslist{
     top:0;
+    height:50%;
+    overflow: auto;
 	margin: 0;
 	border: 0;
 	padding: 0;
@@ -185,7 +181,7 @@ hr{
 }
 
 
-div#summary{
+#summary{
 	color: black;
     padding: 8px 15px;
     text-align: center;
@@ -193,51 +189,16 @@ div#summary{
     font-size: 1.5rem;
 	border-bottom: 15px;
 	border-color: black;
-	width: 99%%;
-    height: 100%;
+	width: 99%;
+    height: 25%;
 	font-family: ABOVE;
-	font-size:20px;
 }
 
-
-@import "compass/css3";
-.sign-up-nav{
-	padding: 100px 0;
-	text-align: center;
-	width: 300px;
-	margin: 10% auto;
-	background: #77aaff;
-	@include box-shadow(0 1px 2px 1px rgba(0,0,0,0.3));
-	@include border-radius(3px);
-	button{
-		padding: 15px 45px;
-		background: #77aadd;
-		border: 1px solid #3377aa;
-		display: inline-block;
-		text-transform: uppercase;
-		font-weight: bold;
-	}
+#id{
+    color: black;
+	font-family: ABOVE;
+	font-size: 1.5rem;
 }
-
-
-#form-wrapper{
-	.pop-up-form{
-		top:0;
-		display: block;
-	}
-}
-
-
-
-    
-.form-container{
-		background: #fff;
-		width: 300rem;
-		padding: 100px 30px;
-		margin: 100px auto;
-		border: 1px solid #dedede;
-	}
-
 
 /* add button */
 .addbtn{
@@ -277,10 +238,15 @@ input{
    text-decoration: none;
    display:inline;
    font-size: 0.899rem;
-    width: 30px;
-   
+   width: 30px;
    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
+#saveButton{
+    width: 100px;
+    height: 37.5px;
+}
+
 
 label{
     display:inline-block;
@@ -292,23 +258,36 @@ label{
 }
 
 
-article {
-  display: block;
-  position: fixed;
-  font-family: above;
-  font-size:1rem;
-  left: 25%;
-  top: 100%;
-  width: 30rem;
-  height: 50rem;
-  padding: 2em 3% 1px 3%;
-  border-radius: 5em;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  background-color:#305041;
+.apparatusPopUp {
+    display: block;
+    position: fixed;
+    font-family: above;
+    font-size:1rem;
+    left: 25%;
+    top: 100%;
+    width: 30rem;
+    height: 50rem;
+    padding: 2em 3% 0px 3%;
+    border-radius: 5em;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color:#305041;
+    color: #fff;  
+    overflow: auto;
+    padding-bottom: 5em;
+    transition: all 1s;
+    margin-top: 100px;
+}
+
+/**binigay**/
+.bListPopUp{
+  font-size: 1rem;
+  background-color: #305041;
   color: #fff;  
-  overflow: auto;
-  padding-bottom: 1em;
-  transition: all 1s;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  z-index: 5;
 }
 
 :target {
@@ -339,8 +318,9 @@ aticle [data-button="close"] {
 .record{
     padding-top: 50px;
     margin-left: 20%;
-    font-family: above;
+    font-family: "Lucida Console";
     font-size: 1.3rem;
+    text-align: left;
 }
 
 #display{
@@ -350,12 +330,19 @@ aticle [data-button="close"] {
    padding-bottom: 30px;
    color: white;
    text-align: center;
-   font-family: above;
+   font-family: "Lucida Console";
    text-decoration: none;
    display:inline;
-   font-size: 1.3rem;
-   width: 200px;
+   font-size: 1.6rem;
+   width: 300px;
     
+}
+
+.displayApparatus {
+    text-align: left;
+    font-family: "Lucida Console";
+    margin-bottom: 2px;
+    padding-left: 13px;
 }
 
 .infoButton{
@@ -363,31 +350,38 @@ aticle [data-button="close"] {
     height:20%;
     font-family: above;
     font-size: 1.5rem;
-    border-radius: 3rem;
+    opacity: 0.8;
 }
 
 #app{
     background-color:azure;
-    color:cadetblue;
+    color:#002d00;/**updated**/
     font-size:30px;
-    width:900px;
-    max-width:900px;
+    width:100%;
+    max-width:100%;
 }
 
 #choices{
     text-align:center;
 }
 
-.hidden{
-    display:none;
+.apparatusInfo{
+    display: none;
+    width: 100%;
+    height:inherit;
+    background-color: azure;
+    
+}
+
+#info {
+    font-size: 20px;
+    font-family: ABOVE;
+    color: #002d00;
+    opacity: 0.8;
 }
 
 .unhidden{
     display:block;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #2C291F;
 }
 
 .dropdown {
@@ -411,16 +405,127 @@ aticle [data-button="close"] {
     display: block;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
-
 .show {display:block;}
 
 
+/** borrower's list **/
+#qbutton{
+   width : 5%;  
+}
 
-.#summaryInfo{
+#rbutton{
+    width : 5%;
+    height: 20px;
+}
+
+.remove{
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+.popUpButton{
+    margin-left: 10px;
+    margin-right: 5px;
+    margin-top: 20px;
+    background-color:#7a8f9b;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    padding: 10px 30px;
+    text-align: left;
     font-family: above;
+    text-decoration: none;
+    display:inline;
+    font-size: 0.899rem;
+    width: 30px; 
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.popUpButtonBorrowers{
+    margin-left: 10px;
+    margin-right: 5px;
+    margin-top: 20px;
+    background-color:#7a8f9b;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    font-family: above;
+    text-decoration: none;
+    display:inline;
+    font-size: 0.899rem;
+    width: 110px; 
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.button {
+    display: block;
+    margin-top: 20px;
+}
+/**dagdag hanggang @media**/
+.bList {
+    text-align: center;
+    padding-top: 100px;
+    margin-top:160px;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    background-color: #D8FFDC;
+    background-image: url('bg.png');
+    overflow-x: hidden;
+}
+
+.bList a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
     font-size: 1.5rem;
-    
-    
-    
+    color: white;
+    display: block;
+	text-align: left;
+	font-family: ABOVE;
+}
+
+.bList .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 2rem;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .bList {padding-top: 15px;}
+  .bList a {font-size: 2rem;}
+}
+
+/***apparatus*/
+.categorybutton{
+    padding: 15px 45px;
+    text-align: center;
+    background: #77aadd;
+    border: 1px solid #3377aa;
+    display: inline-block;
+    font-weight: bold;
+    margin: 10% auto;
+    width: 300px;
+    box-shadow: 0 1px 2px 1px rgba(0,0,0,0.3);
+    border-radius: 3px;
+}
+
+/*Pop-up*/
+.pop-up {
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    width: 100%;
+}
+.inputBox {
+    text-align: center;
+    margin-left: 10px;
+    max-width: 100%;
+    width:100%;
 }
