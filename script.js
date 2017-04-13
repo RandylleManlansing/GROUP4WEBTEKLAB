@@ -1,15 +1,21 @@
-function saveToLS(){
-    var request = new XMLHttpRequest();
-    request.open("GET", "file.json", true);
-    request.setRequestHeader("Content-type", "application/json")
-    request.onreadystatechange = function() {
-        if(this.readyState == 4 && this.status == 200){
-            var response = this.responseText;
-            var data = JSON.stringify(response);
-            localStorage.setItem("apparatusArray", data);
-        }
-    };
-        request.send();
+window.onload = function () {
+	var data = localStorage.getItem("apparatusArray");
+	if (data == null || data == 'undefined' || data == '' ){
+		loadJSON();
+	}
+};
+
+function loadJSON() {
+	var request = new XMLHttpRequest();
+	request.open("GET", "file.json", true);
+	request.setRequestHeader("Content-type", "application/json");
+	request.onreadystatechange = function() {
+		if (request.readyState == XMLHttpRequest.DONE ) {
+			var jsonData = JSON.parse(request.response);
+			localStorage.setItem('apparatusArray', request.response);
+		}
+	};
+	request.send();
 }
 
 // addition starts here
