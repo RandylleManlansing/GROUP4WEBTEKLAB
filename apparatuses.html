@@ -1,60 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Apparatus</title>
-		<script src ="script.js"></script>
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	</head>
-	<body>
-		<header>
-		<div id="header">
-			<div id="mySidenav" class="sidenav">
-				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-				<img src="SNS.png" class="logo">
-				<hr>
-				<hr>
-				<a href="borrowers-list.html">Borrower's List</a>
-				<a href="apparatuses.html">Apparatuses</a>
-				<a href="history.html">History</a>
-				<a href="report.html">Reports</a>
-			</div>
-			<span onclick="openNav()" class="menu">&#9776;</span>
-			<span class="add">&#10011;</span>
-			
-			<!-- addition starts here -->
-			<article id="form">
-           			<a href="#" data-button="close" class = "closebtn">&times;</a>
+    <head>
+        <title>Apparatus</title>
+        <script src ="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <script>         
+            $("button").click( function(onclick) {
+                $.getJSON("file.json", function(apparatus){
+                    $.each(obj, function(key,value){
+                        $('ul').append('<li>'+value.name+'</li>')
+                    })
+                })
+            })
+        </script>
+    </head>
 
-			
-				<form id="apparatusrecord" onsubmit="return false">
-					Name:<br><input type="text" name="name"><br><br>
-					Type:<br><input type="text" name="type"><br><br>
-					Price:<br><input type="text" name="price"><br><br>
-					<br><br>
-					<input type="button" name="submit" value="Save" onclick="saveData()">
-				</form>
-          		 </article>		
-			<!-- addition ends here -->
-			
-			
-			<h1 class="title">Apparatus Checker</h1>
-			<h3 class="page-name">Apparatuses</h3>
-			
-		</div>
-		</header>
-		<div id="second-layer">
-			<h2 class="filter">Filter:</h2>
-			<select name="Select">
-				<option selected disabled>Choose here</option>
-				<option value="Chemistry">All</option>
-				<option value="Chemistry">Chemistry</option>
-				<option value="Physics">Physics</option>
-				<option value="Biology">Biology</option>
-			</select>
-		</div>
-		<div class="main">
-			<!-- removed this content -->
-		</div>
-	</body>
+    <body>
+        <header>
+            <div id="header">
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <img src="SNS.png" class="logo" alt="logo">
+                    <hr>
+                    <hr>
+                    <a href="borrowers-list.html">&#10004; Borrower's List</a>
+                    <hr>
+                    <a href="apparatuses.html">&#9738; Apparatuses</a>
+                    <hr>
+                    <a href="history.html">&#9782; History</a>
+                    <hr>
+                    <a href="report.html">&#9998; Reports</a>
+                    <hr>
+                </div>
+                
+                <span onclick="openNav()" class="menu">&#9776;</span>
+                <span class="add"><a href = "#form" class="addbtn">&#10133;</a></span>
+                <h1 class="title"><span class="small">i</span><span class="big">L</span><span class="small">AB</span><span class="big">C</span><span class="small">HECKER</span></h1>
+                <h3 class="page-name">Apparatuses</h3>
+                
+                <div id="form" class="apparatusPopUp">
+                    <p>ADDING APPARATUS</p>
+                    <form id="apparatusRecord" onsubmit="return false">
+                        <span class="pop-up">Name: <span class="inputBox"><input type="text" name="name"></span></span>
+                        <span class="pop-up">Type: <span class="inputBox"><input type="text" name="type"></span></span>
+                        <span class="pop-up">Price: <span class="inputBox"><input type="text" name="price"></span></span>
+                        <span class="pop-up">Stock: <span class="inputBox"><input type="text" name="stock"></span></span>
+                        <span class="button">
+                            <input type="button" class ="popUpButton" name="submit" value="Save" id="saveButton" onclick="saveApparatus()">
+                            <a href = "#" data-button= "close" class = "popUpButton">Cancel</a>
+                        </span>
+                    </form>
+                </div>
+            </div>
+        </header>
+        
+        <div id="second-layer">
+            <h2 id = "category"> Category:</h2>
+            <button id="btn" onclick="loadApparatus()">Something </button>
+        </div>
+        
+        <div class="main">
+            <div id ="borrow" class = "apparatuslist">
+                <div id="choices">
+                    <div id="showList"></div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
