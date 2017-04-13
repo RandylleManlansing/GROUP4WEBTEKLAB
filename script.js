@@ -44,3 +44,15 @@ function displayNote() {
             document.getElementById("stock").innerHTML = n[Aname].stock;
             document.getElementById("price").innerHTML = n[Aname].price;
         }
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+function cancel() {
+    document.getElementById("form").style.width = "0";
+}
+
+function add() {
+    document.getElementById("form").style.width = "100%";
+}
