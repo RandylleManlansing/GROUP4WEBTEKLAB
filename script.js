@@ -1,8 +1,11 @@
+var checkoutItems = new Array();
+
 window.onload = function () {
 	var data = localStorage.getItem("apparatusArray");
 	if (data == null || data == 'undefined' || data == '' ){
 		loadJSON();
 	}
+	document.getElementById("main").innerHTML = getCheckouts();
 };
 
 function loadJSON() {
@@ -13,13 +16,101 @@ function loadJSON() {
 		if (request.readyState == XMLHttpRequest.DONE ) {
 			var jsonData = JSON.parse(request.response);
 			localStorage.setItem('apparatusArray', request.response);
+			localStorage.setItem("APPARATUS_ID_COUNTER", 0);
 		}
 	};
 	request.send();
 }
 
-// addition starts here
-// this is the function that saves the added apparatus to the local storage
+function GenerateList(){
+    var htmlString = "";
+    var aList;
+    var ID = 1;
+    var listDiv = document.getElementById('showList');
+	var jsonData = JSON.parse(localStorage.getItem("apparatusArray"));
+        
+    for (var i = 0; i < jsonData["apparatusArray"].length ; i++) {
+        htmlString += "<button id='button-" +  jsonData["apparatusArray"][i].id + "' class='app infoButton' onclick = 'addRow(" + jsonData["apparatusArray"][i].id + ")'>"+ jsonData["apparatusArray"][i].name + "</button>" + "<div id='newpost'>" + "<input type='number' name='quantity' min='1' max='100' class='quantity' id='quantity-" + jsonData["apparatusArray"][i].id + "'>" + "</div>"+ "<br>";   
+    }
+    listDiv.insertAdjacentHTML('afterbegin', htmlString);        
+}
+
+
+function CheckAndLoad(){
+    var list = document.getElementById("showList");
+       if(list==null || list.innerHTML == ''){
+           GenerateList();
+    }else{
+        document.getElementById("showList").reset;
+    }
+}
+
+function getApparatusJSON(apparatusId){
+	var jsonData = JSON.parse(localStorage.getItem("apparatusArray"));
+	for (var i = 0; i < jsonData["apparatusArray"].length ; i++) {
+		if (jsonData["apparatusArray"][i].id == apparatusId){
+			return jsonData["apparatusArray"][i];
+		}
+	}
+}
+function addRow(apparatusId) {
+    var summaryTable = document.getElementById('sTable');
+	var apparatus = getApparatusJSON(apparatusId);
+	var quantity = document.getElementById("quantity-" + apparatusId).value;
+	addCheckoutItem(apparatusId, quantity);
+    summaryString = 
+		"<tr id='rowCell' class='trStyle'>"+
+			"<td class='tdNameStyle'>" + apparatus.name + "</td>" + 
+			"<td class='tdNameStyle' style='font-family: arial'>" + quantity + "</td>" +
+			"<td class='tdQStyle'>" + "" + "<button onclick='delete_row(this)' class='app infoButton' value='Cancel' name='Cancel'>Cancel</button>" + "</td>" + 
+		"</tr>";
+    summaryTable.insertAdjacentHTML('beforeend', summaryString);
+}
+
+function getCheckouts(){
+	var innerHTML = "";
+	for (var i = 0; i < parseInt(localStorage.getItem("APPARATUS_ID_COUNTER")) ; i++) {
+		var item = JSON.parse(localStorage.getItem(i));
+		innerHTML += "User: " + item.userid + "<br/>" + "Apparatus: " + getApparatus(item.apparatusId).name + "<br/>" + "Quantity: " + item.quantity + "<br/>" + "Date: " + item.timestamp;
+	}
+	return innerHTML;
+}
+
+function getApparatus(id){
+	var jsonData = JSON.parse(localStorage.getItem("apparatusArray"));
+	console.log("This is the app id: " + id);
+	console.log("array size: " + jsonData["apparatusArray"].length);
+	for (var i = 0; i < jsonData["apparatusArray"].length; i++){
+		if (jsonData["apparatusArray"][i].id == id){
+			return jsonData["apparatusArray"][i];
+		}
+	}
+}
+function delete_row(r){
+    var i = r.parentNode.parentNode.rowIndex;
+    document.getElementById("sTable").deleteRow(i);
+}
+
+function checkout(apparatusId, userid, quantity, classcode){
+	var counter = localStorage.getItem("APPARATUS_ID_COUNTER");
+	var text = '{' +
+			'"checkoutId": ' + counter  + ','+
+			'"apparatusId": ' + apparatusId + ','+
+			'"userid": ' + '"' + userid  + '"' + ','+
+			'"quantity": ' + quantity + ','+
+			'"timestamp": ' + '"' + (new Date()) + '"' + ','+
+			'"classcode": ' + '"' + classcode  + '"' +
+		'}';
+    localStorage.setItem("APPARATUS_ID_COUNTER", parseInt(counter) + 1);
+	localStorage.setItem(counter, text);
+	console.dir(localStorage);
+}
+
+function save(){
+	for (var i = 0; i < checkoutItems.length; i++) {
+		checkout(checkoutItems[i].apparatusId, document.getElementById('idnum').value, checkoutItems[i].quantity, document.getElementById('classCode').value)
+	}
+}
 
 function saveApparatus() {
 
@@ -50,6 +141,14 @@ function displayNote() {
             document.getElementById("stock").innerHTML = n[Aname].stock;
             document.getElementById("price").innerHTML = n[Aname].price;
         }
+
+function cancelTransaction(){
+    location.reload();
+}
+
+function clearBox(){
+    document.getElementById("showList").innerHTML = "";
+}
 
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
