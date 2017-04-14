@@ -1,0 +1,43 @@
+function cancelTransaction(){
+    location.reload();
+}
+
+function refreshPage(){
+    window.location.reload();
+} 
+
+function clearBox(){
+    document.getElementById("showList").innerHTML = "";
+}
+
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+function cancel() {
+    document.getElementById("form").style.width = "0";
+}
+
+function cancelCheckIn(){
+    document.getElementById("")
+}
+
+function add() {
+    document.getElementById("form").style.width = "100%";
+}
+
+function addCheckIn() {
+    document.getElementById("checkingIn").style.width = "100%";
+}
+
+function deleteParentElement(n) {
+    n.parentNode.parentNode.removeChild(n.parentNode);
+}
+    
+(function(event){GenerateList()
+})
