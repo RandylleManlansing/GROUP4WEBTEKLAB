@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>History</title>
+        <title>Report</title>
         <script src ="script.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -28,7 +28,7 @@
                 <span onclick="openNav()" class="menu">&#9776;</span>
                 <span class="add">&#10011;</span>
                 <h1 class="title"><span class="small">i</span><span class="big">L</span><span class="small">AB</span><span class="big">C</span><span class="small">HECKER</span></h1>
-                <h3 class="page-name">History</h3>
+                <h3 class="page-name">Reports</h3>
             </div>
         </header>
         
@@ -36,6 +36,17 @@
         </div>
         
         <div class="main">
+            <div class="record">
+                <h1>Apparatus: <span id="Aname"></span></h1>
+                Name:<p id="name"></p><br>
+                Category:<p id="categ"></p><br>
+                Type:<p id="type"></p><br>
+                Price:<p id="price"></p>
+            </div> 
+            
+            <p class="displayApparatus">Display Apparatus:</p>
+            <input type="text" id="apparatusID" value="">
+            <input type="button" onclick="displayNote();" value="Display Data" id ="display" />		
         </div>
     </body>
 </html>
