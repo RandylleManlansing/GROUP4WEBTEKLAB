@@ -1,47 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Report</title>
-		<script src ="script.js"></script>
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	</head>
-	<body>
-		<header>
-		<div id="header">
-			<div id="mySidenav" class="sidenav">
-				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-				<img src="SNS.png" class="logo">
-				<hr>
-				<hr>
-				<a href="borrowers-list.html">Borrower's List</a>
-				<a href="apparatuses.html">Apparatuses</a>
-				<a href="history.html">History</a>
-				<a href="report.html">Reports</a>
-			</div>
-			<span onclick="openNav()" class="menu">&#9776;</span>
-			<span class="add">&#10011;</span>
-			<h1 class="title">Apparatus Checker</h1>
-			<h3 class="page-name">Reports</h2>
-			
-		</div>
-		</header>
-		<div id="second-layer">
-		</div>
-		<div class="main">
-			
-			<!-- addition of content starts here -->
-			<div class="record">
-				<h1>Apparatus: <span id="Aname"></span></h1>
-				Name:<p id="name"></p><br>
-				Type:<p id="type"></p><br>
-				Price:<p id="price"></p>
-			</div>
-
-			Diplay Apparatus: <br><br>
-			<input type="text" id="apparatusID" value="">
-			<input type="button" onclick="displayNote();" value="Display Data" />
-			<!-- Addition of contents ends here -->
-		</div>
-	</body>
+    <head>
+        <title>History</title>
+        <script src ="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    </head>
+    
+    <body>
+        <header>
+            <div id="header">
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <img src="SNS.png" class="logo" alt="logo">
+                    <hr>
+                    <hr>
+                    <a href="borrowers-list.html">&#10004; Borrower's List</a>
+                    <hr>
+                    <a href="apparatuses.html">&#9738; Apparatuses</a>
+                    <hr>
+                    <a href="history.html">&#9782; History</a>
+                    <hr>
+                    <a href="report.html">&#9998; Reports</a>
+                    <hr>
+                </div>
+                
+                <span onclick="openNav()" class="menu">&#9776;</span>
+                <span class="add">&#10011;</span>
+                <h1 class="title"><span class="small">i</span><span class="big">L</span><span class="small">AB</span><span class="big">C</span><span class="small">HECKER</span></h1>
+                <h3 class="page-name">History</h3>
+            </div>
+        </header>
+        
+        <div id="second-layer">
+        </div>
+        
+        <div class="main">
+        </div>
+    </body>
 </html>
