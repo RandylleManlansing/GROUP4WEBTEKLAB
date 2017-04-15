@@ -113,34 +113,29 @@ function save(){
 }
 
 function saveApparatus() {
-
             var form = document.getElementById("apparatusRecord");
             var Atype = form.type.value; // maybe change this to a dropdown form? and or just add valdation for numerical value
             var price = form.price.value;
             var Aname = form.name.value;
             var categ = form.categ.value;
             var stock = form.stock.value;
-
-            var jsonString = " {  '"+Aname+"': { 'categ':'"+categ+"','type':'"+Atype+"',  'stock':'"+stock+"',  'price':'"+price+"' } } ";
-                jsonString = jsonString.replace(/'/g, "\"");
-        
-            localStorage.setItem(Aname, jsonString);
+	    var index = b.length + 1;
+	    
+	    var jsonString = {"id":  index , "name":  Aname , "category": category , "type": type , "stock": stock , "price": price};
+       
+    if (Aname=="" || category==""|| type=="" || stock=="" || price=="") {
+      alert("Please Fill All Required Fields");
+      return false;
+    } else if (isNaN(stock) || isNaN(price)) {
+        alert("Invalid input");
+        return false;
+    }else{
+        b[b.length] = jsonString;
+        var bracket = {"apparatusArray":b};
+        localStorage.setItem("apparatusArray", JSON.stringify(bracket));
+        form.reset();
+    } 
 }
-
-// addition to saveApparatus function to work
-(function(event){saveApparatus()
-})
-
-//displaying the added function
-function displayNote() {
-            var Aname = document.getElementById("apparatusID").value;
-            var n = JSON.parse(localStorage.getItem(Aname));
-            document.getElementById("name").innerHTML = Aname;
-            document.getElementById("categ").innerHTML = n[Aname].categ;
-            document.getElementById("type").innerHTML = n[Aname].type;
-            document.getElementById("stock").innerHTML = n[Aname].stock;
-            document.getElementById("price").innerHTML = n[Aname].price;
-        }
 
 function cancelTransaction(){
     location.reload();
