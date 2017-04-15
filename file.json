@@ -1,6 +1,6 @@
 {
-"apparatusArray": [  
-        {
+  "apparatusArray": [{
+	"id": 1,
         "name": "Adapter", 
          "category": "physics", 
          "type": "electrical device",
@@ -9,6 +9,7 @@
         },
     
         {
+	"id": 2,
         "name": "Alcoholmeters",
          "category": "physics",
          "type": "electrical device",
@@ -17,6 +18,7 @@
         },
     
         {
+	"id": 3,
         "name": "Beaker", 
          "category": "biology",
          "type": "glassware", 
@@ -25,6 +27,7 @@
         },
     
         {
+	"id": 4,
         "name": "Buchner Funnel",
          "category": "chemistry",
          "type": "filtartion",
@@ -33,6 +36,7 @@
         },
     
         {
+	"id": 5,
         "name": "Burette", 
          "category": "physics/chemistry",
          "type": "glassware",
@@ -41,6 +45,7 @@
         },
     
         {
+	"id": 6,
         "name": "Burette Clamp", 
          "category": "physics/chemistry", 
          "type": "holder", 
@@ -49,6 +54,7 @@
         },
     
         {
+	"id": 7,
         "name": "Centrifuge Tube",
         "category": "biology",
         "type": "container",
@@ -57,6 +63,7 @@
         },
     
         {
+	"id": 8,
         "name": "Clevenger flask",
         "category": "biology",
         "type": "glassware", 
@@ -65,6 +72,7 @@
         },
     
         {
+	"id": 9,
         "name": "Clavenger tube", 
         "category": "biology", 
         "type": "oil extractor",
@@ -73,6 +81,7 @@
         },
     
         {
+	"id": 10,
         "name": "Culture tube", 
         "category": "biology", 
         "type": "glassware", 
@@ -81,6 +90,7 @@
         },
     
         {
+	"id": 11,
         "name": "Distillation flask",
         "category": "chemistry", 
         "type": "separator", 
@@ -89,6 +99,7 @@
         },
     
         {
+	"id": 12,
         "name": "Evaporating dish", 
         "type": "heatings", 
         "stock": "100",  
@@ -96,6 +107,7 @@
         },
     
         {
+	"id": 13,
         "name": "Florence Flask",
         "category": "chemistry/biology",
         "type": "glassware", 
@@ -104,6 +116,7 @@
         },
     
         {
+	"id": 14,
         "name": "Glass Pipete Holder", 
         "category": "chemistry", 
         "type": "media dispenser",
@@ -112,6 +125,7 @@
         },
     
         {
+	"id": 15,
         "name": "Graduated Cylinder", 
         "category": "chemistry", 
         "type": "measuring", 
@@ -120,6 +134,7 @@
         },
     
         {
+	"id": 16,
         "name": "Iron clamp (big)", 
         "category": "physics/chemistry", 
         "type": "holder", 
@@ -128,6 +143,7 @@
         },
     
         {
+	"id": 17,
         "name": "Iron clamp (small)",  
         "category": "physics/chemistry",
         "type": "holder", 
@@ -136,6 +152,7 @@
         },
     
         {
+	"id": 18,
         "name": "Iron ring",  
         "category": "physics/chemistry", 
         "type": "holder", 
@@ -144,6 +161,7 @@
         },
     
         {
+	"id": 19,
         "name": "Knife", 
         "category": "physics/biology/chemistry",
         "type": "cutting", "stock": "100", 
@@ -151,6 +169,7 @@
         },
     
         {
+	"id": 20,
         "name": "Perculator tube",
         "category": "biology",
         "type": "brewing", 
@@ -159,6 +178,7 @@
         },
     
         {
+	"id": 21,
         "name": "Petri Dish", 
         "category": "biology", 
         "type": "glassware", 
@@ -167,6 +187,7 @@
         },
     
         {
+	"id": 22,
         "name": "Pippete",
         "category": "physics/chemistry", 
         "type": "media dispenser",
@@ -175,6 +196,7 @@
         },
     
         {
+	"id": 23,
         "name": "Plastic Funnel", 
         "category": "chemistry", 
         "type": "filtration", 
@@ -183,6 +205,7 @@
         },
     
         {
+	"id": 24,
         "name": "Quartz", 
         "category": "physics/chemistry",
         "type": "glassware", 
@@ -191,6 +214,7 @@
         },
     
         {
+	"id": 25,
         "name": "Reagant bottles",
         "category": "physics/chemistry",
         "type": "media bottles",
@@ -199,6 +223,7 @@
         },
     
         {
+	"id": 26,
         "name": "Receiver flask", 
         "category": "chemistry/biology", 
         "type": "filtration", 
@@ -207,6 +232,7 @@
         },
     
         {
+	"id": 27,
         "name": "Rotary Evaporating flask",
         "category": "chemistry/biology", 
         "type": "glassware", 
@@ -215,6 +241,7 @@
         },
     
         {
+	"id": 28,
         "name": "Screw capped test tube", 
         "category": "biology", 
         "type": "glassware", 
@@ -223,6 +250,7 @@
         },
     
         {
+	"id": 29,
         "name": "Seperatory Funnel",
         "category": "chemistry",
         "type": "filtration", 
@@ -231,6 +259,7 @@
         },
     
         {
+	"id": 30,
         "name": "Serological pipette", 
         "category": "chemistry",
         "type": "media dispenser", 
@@ -239,6 +268,7 @@
         },
     
         {
+	"id": 31,
         "name": "Soxhlet Apparatus",  
         "category": "physics", 
         "type": "extractor", 
@@ -247,6 +277,7 @@
         },
     
         {
+	"id": 32,
         "name": "Soxhlet Apparatus (complete set)", 
         "category": "physics", 
         "type": "extractor", 
@@ -255,6 +286,7 @@
         },
     
         {
+	"id": 33,
         "name": "Soxhlet clamp", 
         "category": "physics", 
         "type": "holder", 
@@ -263,6 +295,7 @@
         },
     
         {
+	"id": 34,
         "name": "spoon", 
         "category": "physics/chemistry", 
         "type": "stirring/measuring", 
@@ -271,6 +304,7 @@
         },
     
         {
+	"id": 35,
         "name": "Staining dish", 
         "category": "biology", 
         "type": "staining",
@@ -279,6 +313,7 @@
         },
     
         {
+	"id": 36,
         "name": "Stirring bar", 
         "category": "physics/chemistry/biology",
         "type": "stirring",
@@ -287,6 +322,7 @@
         },
     
         {
+	"id": 37,
         "name": "Supelclean ENVI",
         "category": "physics/chemistry", 
         "type": "glassware", 
@@ -295,6 +331,7 @@
         },
     
         {
+	"id": 38,
         "name": "Supelclean LC", 
         "category": "chemistry/physics",
         "type": "glassware", 
@@ -303,6 +340,7 @@
         },
     
         {
+	"id": 39,
         "name": "Test tube",
         "category": "chemistry/biology",
         "type": "measuring/glassware",
@@ -311,6 +349,7 @@
         },
     
         {
+	"id": 40,
         "name": "Test tube rack", 
         "category": "chemistry/biology", 
         "type": "holder", 
@@ -319,6 +358,7 @@
         },
     
         {
+	"id": 41,
         "name": "Test tube rack (small)",
         "category": "chemistry/biology", 
         "type": "holder", 
@@ -327,6 +367,7 @@
         },
     
         {
+        "id": 42,
         "name": "Test tube with cap",
         "category": "chemistry/biology", 
         "type": "measuring",
@@ -335,6 +376,7 @@
         },
     
         {
+	"id": 43,
         "name": "Thistle Tube",
         "category": "biology", 
         "type": "glassware", 
@@ -343,6 +385,7 @@
         },
 
         {
+	"id": 44,
         "name": "Volumetric Flask", 
         "category": "chemistry/biology",
         "type": "glassware",
@@ -350,6 +393,7 @@
         "price": "null"
         },
         {
+	"id": 45,
         "name": "Volumetric Pipette", 
         "category": "chemistry", 
         "type": "media dispenser", 
@@ -358,6 +402,7 @@
         },
     
         {
+	"id": 46,
         "name": "Wash bottle",  
         "category": "physics", 
         "type": "container", 
@@ -366,6 +411,7 @@
         },
     
         {
+	"id": 47,
         "name": "Wash Glass", 
         "category": "chemistry", 
         "type": "glassware", 
@@ -374,6 +420,7 @@
         },
     
         {
+	"id": 48,
         "name": "Weighing bottles", 
         "category": "physics/chemistry", 
         "type": "weighing", 
@@ -382,13 +429,12 @@
         },
     
         {
+	"id": 49,
         "name": "Wire gauze",
         "category": "physics/chemistry/biology", 
         "type": "holder", 
         "stock": "100", 
         "price": "null"
-        } 
+        } ]
 
-    ]
 }
-
