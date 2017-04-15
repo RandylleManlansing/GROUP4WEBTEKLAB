@@ -15,12 +15,26 @@ function loadJSON() {
 	request.onreadystatechange = function() {
 		if (request.readyState == XMLHttpRequest.DONE ) {
 			var jsonData = JSON.parse(request.response);
-			localStorage.setItem('apparatusArray', request.response);
-			localStorage.setItem("APPARATUS_ID_COUNTER", 0);
-		}
-	};
-	request.send();
+        		    if(localStorage.getItem("apparatusArray") == undefined)
+          		  //localStorage.setItem("apparatusArray", JSON.stringify(jsonSampleDefault));
+           		   	 localStorage.setItem('apparatusArray', request.response);
+           			 localStorage.setItem("APPARATUS_ID_COUNTER", 0);
+        }
+    };
+    request.send();
+    loadJSON();
 }
+
+function loadJSON() {
+    var request = new XMLHttpRequest();
+    request.open("GET", "file.json", true);
+    request.setRequestHeader("Content-type", "application/json");
+    request.onreadystatechange = function() {
+        if (request.readyState == XMLHttpRequest.DONE ) {
+            var jsonData = JSON.parse(request.response);
+
+var a = localStorage.getItem("apparatusArray");
+var b = JSON.parse(a)["apparatusArray"];
 
 function GenerateList(){
     var htmlString = "";
