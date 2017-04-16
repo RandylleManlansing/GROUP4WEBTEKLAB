@@ -182,10 +182,57 @@ function checkout(apparatusId, userid, quantity, classcode){
 			'"quantity": ' + quantity + ','+
 			'"timestamp": ' + '"' + (new Date()) + '"' + ','+
 			'"classcode": ' + '"' + classcode  + '"' +
-		'}';
+			'"hasBeenReturned": false' + 
+		    '}';
     localStorage.setItem("APPARATUS_ID_COUNTER", parseInt(counter) + 1);
 	localStorage.setItem(counter, text);
 	console.dir(localStorage);
+}
+
+function saveCheckIn(user){
+	for (var i = 0; i < checkinItems.length; i++){
+		var checkoutId = checkinItems[i];
+		var checkoutQuantity = document.getElementById("txtCheckoutQuantity-" + checkoutId).value;
+		performCheckout(checkoutId, checkoutQuantity);
+	}
+	checkinItems.length = 0;
+	
+}
+function performCheckout(checkoutId, checkoutQuantity){
+	for (var i = 0; i < parseInt(localStorage.getItem("APPARATUS_ID_COUNTER")) ; i++) {
+		var item = JSON.parse(localStorage.getItem(i));
+		if (item.checkoutId == checkoutId){
+			if (checkoutQuantity < item.quantity){
+				checkout(item.apparatusId, item.userid, item.quantity - checkoutQuantity, item.classcode);
+			}
+			var item = JSON.parse(localStorage.getItem(i));
+			item.hasBeenReturned = true;
+			localStorage.setItem(i, JSON.stringify(item));
+			return;
+		}
+	}
+}
+
+function displayNote(user) {
+    var innerHTML = "<h1>" + "Report for: " + user + "</h1><table style='text-align: left;'>";
+	console.log("user:" + user);
+    var something = document.getElementById("report");
+	var sum = 0;
+	
+	for (var i = 0; i < parseInt(localStorage.getItem("APPARATUS_ID_COUNTER")) ; i++) {
+		var item = JSON.parse(localStorage.getItem(i));
+        if (item.userid == user && !item.hasBeenReturned){
+		innerHTML +=   "<tr><td>" + "Apparatus: " + getApparatus(item.apparatusId).name + "</td>" + 
+                     "<td>" + " Type: " + getApparatus(item.apparatusId).type + "</td>" + 
+                        "<td> Price: " +  getApparatus(item.apparatusId).price + "</td>" +
+						"<td> Quantity: " +  item.quantity + "</td>" +
+                      "</tr>"+
+                      "<tr>";
+			sum += parseInt(getApparatus(item.apparatusId).price) * parseInt(item.quantity);
+        }
+	}
+	innerHTML += "</table><div style='font-size: 2em; margin-top: 40px;'>Sum: " + sum + "</div>";
+	document.getElementById("notes").innerHTML = innerHTML;
 }
 
 function save(){
@@ -242,6 +289,34 @@ function delete_row(r, appId){
     document.getElementById("sTable").deleteRow(i);
 	deleteCheckoutRow(appId);
 }
+	   
+function generateCheckoutAndCheckinTableForUser(checkoutContainer, checkinContainer, user){
+	generateCheckoutTableForUser(user, checkoutContainer);
+	generateCheckinTableForUser(user, checkinContainer);
+}
+
+function generateCheckoutTableForUser(user, container){
+	var html = "<table style='width: 100%'>" + 
+	"<tr class='trStyle'>" +
+	"<td class='tdASumStyle'>Apparatus</td>" +
+	"<td class='tdASumStyle'>Class Code</td>" +
+	"<td class='tdASumStyle'>Quantity</td>" +
+	"<td class='tdASumStyle'>Time and Date Borrowed</td>" +
+    "</tr>";
+	for (var i = 0; i < parseInt(localStorage.getItem("APPARATUS_ID_COUNTER")) ; i++) {
+		var item = JSON.parse(localStorage.getItem(i));
+		if (item.userid == user && !item.hasBeenReturned){
+			html += "<tr>" + 
+			"<td class='tdASumStyle'>" + getApparatus(item.apparatusId).name + "</td>" + 
+			"<td class='tdASumStyle'>" + item.classcode + "</td>" +
+			"<td class='tdASumStyle'>" + item.quantity + "</td>" +
+			"<td class='tdASumStyle'>" + item.timestamp + "</td>" + 
+		"</tr>";
+		}
+	}
+	html += "</table>";
+	container.innerHTML = html;
+}	
 	    
 function generateCheckinTableForUser(user, container){
 	var html = "<br/><h1 class='h1StyleCheckIn'>Check-In Items for </h1><br/>" + "<table style='width: 100%'>" + 
@@ -341,7 +416,21 @@ function toggleInfo(e){
 }
 		
 
-		
+function refreshPage(){
+    window.location.reload();
+} 
+	   
+function openNav() {
+    document.getElementById("mySidenav").style.width = "50%";
+}
+
+function cancelCheckIn(){
+    document.getElementById("")
+}
+
+function addCheckIn() {
+    document.getElementById("checkingIn").style.width = "100%";
+}	
 
 function cancelTransaction(){
     location.reload();
