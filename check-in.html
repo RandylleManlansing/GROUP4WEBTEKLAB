@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Borrowers-list</title>
+        <script src ="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    </head>
+    
+    <body onload="generateCheckoutAndCheckinTableForUser(document.getElementById('checkOut'), document.getElementById('checkIn'), findGetParameter('user'))">
+        <header>
+            <div id="header">
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <img src="SNS.png" class="logo">
+                    <hr>
+                    <hr>
+                    <a href="borrowers-list.html">&#10004; Borrower's List</a>
+                    <hr>
+                    <a href="apparatus.html">&#9738; Apparatus</a>
+                    <hr>
+                    <a href="history.html">&#9782; History</a>
+                    <hr>
+                    <a href="report.html">&#9998; Reports</a>
+                    <hr>
+                </div>
+                
+                <span onclick="openNav()" class="menu">&#9776;</span>
+                <span class="add" onclick = "add(); CheckAndLoad()">&#10011;</span>
+                <h1 class="title"><span class="small">i</span><span class="big" id="lab">L</span><span class="small" id="lab">AB</span><span class="big" id="checker">C</span><span class="small" id="checker">HECKER</span></h1>
+                <h3 class="page-name">Check-In</h3>
+            </div>
+        </header>
+   
+        <div id="second-layer">
+            <div class="main" id="checkingIn">
+
+            </div>
+        </div>
+        
+        <div class="main">
+			Summary of borrowed things
+        </div>
+         <div id="checkOut">
+        </div>
+        <div id="checkIn">
+        </div>
+		
+        
+            <span class="button">
+            <button type="button" class="popUpButtonBorrowers" onclick="save(); refreshPage()">Save</button>
+            <button type="submit" formtarget="_parent" class="popUpButtonBorrowers" onclick="cancelTransaction()">Cancel</button>
+			</span>
+    </body>
+</html>
