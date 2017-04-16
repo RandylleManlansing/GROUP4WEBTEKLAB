@@ -5,7 +5,7 @@
          "category": "physics", 
          "type": "electrical device",
          "stock": "100", 
-         "price": "null" 
+         "price": "495" 
         },
     
         {
@@ -14,7 +14,7 @@
          "category": "physics",
          "type": "electrical device",
          "stock": "100", 
-         "price": "null"
+         "price": "160"
         },
     
         {
@@ -23,7 +23,7 @@
          "category": "biology",
          "type": "glassware", 
          "stock": "100", 
-         "price": "null"
+         "price": "90"
         },
     
         {
@@ -32,7 +32,7 @@
          "category": "chemistry",
          "type": "filtartion",
          "stock": "100",
-         "price": "null"
+         "price": "230"
         },
     
         {
@@ -41,7 +41,7 @@
          "category": "physics/chemistry",
          "type": "glassware",
          "stock": "100",
-         "price": "null"
+         "price": "160"
         },
     
         {
@@ -50,7 +50,7 @@
          "category": "physics/chemistry", 
          "type": "holder", 
          "stock": "100", 
-         "price": "null"
+         "price": "55"
         },
     
         {
@@ -59,7 +59,7 @@
         "category": "biology",
         "type": "container",
         "stock": "100",
-        "price": "null"
+        "price": "573"
         },
     
         {
@@ -68,7 +68,7 @@
         "category": "biology",
         "type": "glassware", 
         "stock": "100", 
-        "price": "null"
+        "price": "120"
         },
     
         {
@@ -77,7 +77,7 @@
         "category": "biology", 
         "type": "oil extractor",
         "stock": "100",  
-        "price": "null"
+        "price": "100"
         },
     
         {
@@ -86,7 +86,7 @@
         "category": "biology", 
         "type": "glassware", 
         "stock": "100",  
-        "price": "null"
+        "price": "145"
         },
     
         {
@@ -95,7 +95,7 @@
         "category": "chemistry", 
         "type": "separator", 
         "stock": "100",  
-        "price": "null"
+        "price": "145"
         },
     
         {
@@ -103,7 +103,7 @@
         "name": "Evaporating dish", 
         "type": "heatings", 
         "stock": "100",  
-        "price": "null"
+        "price": "40"
         },
     
         {
@@ -112,7 +112,7 @@
         "category": "chemistry/biology",
         "type": "glassware", 
         "stock": "100",  
-        "price": "null"
+        "price": "185"
         },
     
         {
@@ -121,7 +121,7 @@
         "category": "chemistry", 
         "type": "media dispenser",
         "stock": "100",  
-        "price": "null"
+        "price": "1540"
         },
     
         {
@@ -130,7 +130,7 @@
         "category": "chemistry", 
         "type": "measuring", 
         "stock": "100",  
-        "price": "null"
+        "price": "385"
         },
     
         {
@@ -139,7 +139,7 @@
         "category": "physics/chemistry", 
         "type": "holder", 
         "stock": "100",  
-        "price": "null"
+        "price": "130"
         },
     
         {
@@ -148,7 +148,7 @@
         "category": "physics/chemistry",
         "type": "holder", 
         "stock": "100",  
-        "price": "null"
+        "price": "90"
         },
     
         {
@@ -157,7 +157,7 @@
         "category": "physics/chemistry", 
         "type": "holder", 
         "stock": "100",  
-        "price": "null"
+        "price": "45"
         },
     
         {
@@ -165,7 +165,7 @@
         "name": "Knife", 
         "category": "physics/biology/chemistry",
         "type": "cutting", "stock": "100", 
-        "price": "null"
+        "price": "165"
         },
     
         {
@@ -174,7 +174,7 @@
         "category": "biology",
         "type": "brewing", 
         "stock": "100", 
-        "price": "null"
+        "price": "250"
         },
     
         {
@@ -183,7 +183,7 @@
         "category": "biology", 
         "type": "glassware", 
         "stock": "100",  
-        "price": "null"
+        "price": "88"
         },
     
         {
@@ -192,7 +192,7 @@
         "category": "physics/chemistry", 
         "type": "media dispenser",
         "stock": "100",  
-        "price": "null"
+        "price": "1000"
         },
     
         {
@@ -201,7 +201,7 @@
         "category": "chemistry", 
         "type": "filtration", 
         "stock": "100",  
-        "price": "null"
+        "price": "29"
         },
     
         {
@@ -219,7 +219,7 @@
         "category": "physics/chemistry",
         "type": "media bottles",
         "stock": "100",  
-        "price": "null"
+        "price": "52"
         },
     
         {
@@ -228,7 +228,7 @@
         "category": "chemistry/biology", 
         "type": "filtration", 
         "stock": "100", 
-        "price": "null"
+        "price": "185"
         },
     
         {
@@ -237,7 +237,7 @@
         "category": "chemistry/biology", 
         "type": "glassware", 
         "stock": "100",  
-        "price": "null"
+        "price": "4800"
         },
     
         {
@@ -246,7 +246,7 @@
         "category": "biology", 
         "type": "glassware", 
         "stock": "100", 
-        "price": "null"
+        "price": "55"
         },
     
         {
@@ -255,7 +255,7 @@
         "category": "chemistry",
         "type": "filtration", 
         "stock": "100",  
-        "price": "null"
+        "price": "3995"
         },
     
         {
@@ -264,7 +264,7 @@
         "category": "chemistry",
         "type": "media dispenser", 
         "stock": "100", 
-        "price": "null"
+        "price": "98"
         },
     
         {
@@ -273,7 +273,7 @@
         "category": "physics", 
         "type": "extractor", 
         "stock": "100", 
-        "price": "null"
+        "price": "1250"
         },
     
         {
@@ -282,7 +282,7 @@
         "category": "physics", 
         "type": "extractor", 
         "stock": "100", 
-        "price": "null"
+        "price": "4850"
         },
     
         {
@@ -291,7 +291,7 @@
         "category": "physics", 
         "type": "holder", 
         "stock": "100",  
-        "price": "null"
+        "price": "2400"
         },
     
         {
@@ -300,7 +300,7 @@
         "category": "physics/chemistry", 
         "type": "stirring/measuring", 
         "stock": "100",  
-        "price": "null"
+        "price": "20"
         },
     
         {
@@ -309,7 +309,7 @@
         "category": "biology", 
         "type": "staining",
         "stock": "100", 
-        "price": "null"
+        "price": "1740"
         },
     
         {
@@ -318,7 +318,7 @@
         "category": "physics/chemistry/biology",
         "type": "stirring",
         "stock": "100",  
-        "price": "null"
+        "price": "540"
         },
     
         {
@@ -327,7 +327,7 @@
         "category": "physics/chemistry", 
         "type": "glassware", 
         "stock": "100",  
-        "price": "null"
+        "price": "10000"
         },
     
         {
@@ -336,7 +336,7 @@
         "category": "chemistry/physics",
         "type": "glassware", 
         "stock": "100",  
-        "price": "null"
+        "price": "9000"
         },
     
         {
@@ -345,7 +345,7 @@
         "category": "chemistry/biology",
         "type": "measuring/glassware",
         "stock": "100", 
-        "price": "null"
+        "price": "28"
         },
     
         {
@@ -354,7 +354,7 @@
         "category": "chemistry/biology", 
         "type": "holder", 
         "stock": "100", 
-        "price": "null"
+        "price": "510"
         },
     
         {
@@ -362,7 +362,7 @@
         "name": "Test tube rack (small)",
         "category": "chemistry/biology", 
         "type": "holder", 
-        "stock": "100", 
+        "stock": "500", 
         "price": "null"
         },
     
@@ -372,7 +372,7 @@
         "category": "chemistry/biology", 
         "type": "measuring",
         "stock": "100", 
-        "price": "null"
+        "price": "38"
         },
     
         {
@@ -381,7 +381,7 @@
         "category": "biology", 
         "type": "glassware", 
         "stock": "100", 
-        "price": "null"
+        "price": "90"
         },
 
         {
@@ -390,7 +390,7 @@
         "category": "chemistry/biology",
         "type": "glassware",
         "stock": "100", 
-        "price": "null"
+        "price": "945"
         },
         {
 	"id": 45,
@@ -398,7 +398,7 @@
         "category": "chemistry", 
         "type": "media dispenser", 
         "stock": "100",  
-        "price": "null"
+        "price": "410"
         },
     
         {
@@ -407,7 +407,7 @@
         "category": "physics", 
         "type": "container", 
         "stock": "100",  
-        "price": "null"
+        "price": "148"
         },
     
         {
@@ -416,7 +416,7 @@
         "category": "chemistry", 
         "type": "glassware", 
         "stock": "100",  
-        "price": "null"
+        "price": "195"
         },
     
         {
@@ -425,7 +425,7 @@
         "category": "physics/chemistry", 
         "type": "weighing", 
         "stock": "100", 
-        "price": "null"
+        "price": "715"
         },
     
         {
@@ -434,7 +434,7 @@
         "category": "physics/chemistry/biology", 
         "type": "holder", 
         "stock": "100", 
-        "price": "null"
+        "price": "300"
         } ]
 
 }
