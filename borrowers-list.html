@@ -12,12 +12,12 @@
             <div id="header">
                 <div id="mySidenav" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <img src="SNS.png" class="logo" alt="logo">
+                    <img src="SNS.png" class="logo">
                     <hr>
                     <hr>
                     <a href="borrowers-list.html">&#10004; Borrower's List</a>
                     <hr>
-                    <a href="apparatuses.html">&#9738; Apparatuses</a>
+                    <a href="apparatus.html">&#9738; Apparatus</a>
                     <hr>
                     <a href="history.html">&#9782; History</a>
                     <hr>
@@ -26,35 +26,59 @@
                 </div>
                 
                 <span onclick="openNav()" class="menu">&#9776;</span>
-                <span class="add" onclick = "add()">&#10011;</span>
-                <h1 class="title"><span class="small">i</span><span class="big">L</span><span class="small">AB</span><span class="big">C</span><span class="small">HECKER</span></h1>
+                <span class="add" onclick = "add(); CheckAndLoad()">&#10011;</span>
+                <h1 class="title"><span class="small">i</span><span class="big" id="lab">L</span><span class="small" id="lab">AB</span><span class="big" id="checker">C</span><span class="small" id="checker">HECKER</span></h1>
                 <h3 class="page-name">Borrower's List</h3>
             </div>
         </header>
         
         <div id="second-layer">
+            <h2 id = "searchBar"> Search:</h2>
+              <input type="text" id="myInput" onkeyup="search()" placeholder="Search for apparatus.." title="Type in a name">
         </div>
-
-        <div class="main">
+        
+        <!--bago-->
+        <div class="main" id="main">
+            <h1>Checkouts for:</h1>
+            <table id="checkouts" class="checkoutTableStyle">
+                
+            </table>    
+        </div>  
+        
+        <div class="main" id="checkingIn">
+            <table id="checkIn">
+            
+            </table>
         </div>
-        <article id="form" class="bList">
-            <div id="id">
-                ID Number:<input type ="text" id = "idnum" name = "idNumber">
-            </div>
+        
+		 <article id="form" class="bList">
+             <div id="id">
+                 ID Number:<input type ="text" id = "idnum" name = "idNumber"  maxlength="7"> <br>
+                 Class Code:<input type="text" id="classCode" name="courseCode">
+             </div>
             <div id = "apparatuslist">
-                <h2>Apparatuses</h2>
+                <h2>Apparatus</h2>
                 <div id="choices">
                     <div id="showList"></div>
                 </div>
             </div>
+            
+             
             <div id= "summary">
                 <h2> Summary list</h2>
-                <ul id="list"></ul>
+                <table id = "sTable" class='tableStyle'>
+                    <tr class="trStyle">
+                        <td class='tdNameStyle'>Name</td> 
+                        <td class='tdQStyle'>Quantity</td>
+						<td class='tdQStyle' >Cancel</td>
+                    </tr>
+                </table>
             </div>
+             
             <span class="button">
-                <button type="button" class="popUpButtonBorrowers">Save</button>
-                <button class="popUpButtonBorrowers">Cancel</button>
+            <button type="button" class="popUpButtonBorrowers" onclick="save(); refreshPage()">Save</button>
+            <button class="popUpButtonBorrowers" id = "cancel">Cancel</button>
 			</span>
-        </article>
+			</article>
     </body>
 </html>
