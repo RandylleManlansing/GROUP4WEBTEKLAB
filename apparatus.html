@@ -6,28 +6,19 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <script>         
-            $("button").click( function(onclick) {
-                $.getJSON("file.json", function(apparatus){
-                    $.each(obj, function(key,value){
-                        $('ul').append('<li>'+value.name+'</li>')
-                    })
-                })
-            })
-        </script>
     </head>
 
-    <body>
+    <body onload="loadApparatusList()">
         <header>
             <div id="header">
                 <div id="mySidenav" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <img src="SNS.png" class="logo" alt="logo">
+                    <img src="SNS.png" class="logo">
                     <hr>
                     <hr>
                     <a href="borrowers-list.html">&#10004; Borrower's List</a>
                     <hr>
-                    <a href="apparatuses.html">&#9738; Apparatuses</a>
+                    <a href="apparatus.html">&#9738; Apparatus</a>
                     <hr>
                     <a href="history.html">&#9782; History</a>
                     <hr>
@@ -37,34 +28,40 @@
                 
                 <span onclick="openNav()" class="menu">&#9776;</span>
                 <span class="add"><a href = "#form" class="addbtn">&#10133;</a></span>
-                <h1 class="title"><span class="small">i</span><span class="big">L</span><span class="small">AB</span><span class="big">C</span><span class="small">HECKER</span></h1>
-                <h3 class="page-name">Apparatuses</h3>
+                <h1 class="title"><span class="small">i</span><span class="big" id="lab">L</span><span class="small" id="lab">AB</span><span class="big" id="checker">C</span><span class="small" id="checker">HECKER</span></h1>
+                <h3 class="page-name">Apparatus</h3>
                 
-                <div id="form" class="apparatusPopUp">
-                    <p>ADDING APPARATUS</p>
-                    <form id="apparatusRecord" onsubmit="return false">
-                        <span class="pop-up">Name: <span class="inputBox"><input type="text" name="name"></span></span>
-                        <span class="pop-up">Type: <span class="inputBox"><input type="text" name="type"></span></span>
-                        <span class="pop-up">Price: <span class="inputBox"><input type="text" name="price"></span></span>
-                        <span class="pop-up">Stock: <span class="inputBox"><input type="text" name="stock"></span></span>
-                        <span class="button">
-                            <input type="button" class ="popUpButton" name="submit" value="Save" id="saveButton" onclick="saveApparatus()">
-                            <a href = "#" data-button= "close" class = "popUpButton">Cancel</a>
-                        </span>
-                    </form>
-                </div>
+                <article id="form" class="apparatusPopUp">
+            <form id="apparatusRecord" onsubmit="return false">
+                
+            <!-- <form> -->
+                <span class="pop-up">Name: <span class="inputBox"><input type="text" name="name"></span></span>
+                <span class="pop-up">Category: <span class="inputBox"><input type="text" name="category"></span></span>
+                <span class="pop-up">Type: <span class="inputBox"><input type="text" name="type"></span></span>
+                <span class="pop-up">Stock: <span class="inputBox"><input type="text" name="stock"></span></span>
+                <span class="pop-up">Price: <span class="inputBox"><input type="text" name="price"></span></span>
+            <!-- </form> -->
+                
+            <span class="button">
+                <input type="button" class ="popUpButton" name="submit" value="Save" id="saveButton" onclick="saveApparatus(); refreshPage()">
+                <a href = "#" data-button= "close" class = "popUpButton">Cancel</a>
+                </span>
+            </form>
+            </article>
             </div>
         </header>
         
         <div id="second-layer">
-            <h2 id = "category"> Category:</h2>
-            <button id="btn" onclick="loadApparatus()">Something </button>
+           <h2 id = "searchBar"> Search:</h2>
+              <input type="text" id="myInput" onkeyup="search()" placeholder="Search for apparatus.." title="Type in a name">
         </div>
         
         <div class="main">
             <div id ="borrow" class = "apparatuslist">
                 <div id="choices">
                     <div id="showList"></div>
+
+                    
                 </div>
             </div>
         </div>
