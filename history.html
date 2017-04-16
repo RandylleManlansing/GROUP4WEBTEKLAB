@@ -12,12 +12,12 @@
             <div id="header">
                 <div id="mySidenav" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <img src="SNS.png" class="logo" alt="logo">
+                    <img src="SNS.png" class="logo">
                     <hr>
                     <hr>
                     <a href="borrowers-list.html">&#10004; Borrower's List</a>
                     <hr>
-                    <a href="apparatus.html">&#9738; Apparatuses</a>
+                    <a href="apparatus.html">&#9738; Apparatus</a>
                     <hr>
                     <a href="history.html">&#9782; History</a>
                     <hr>
@@ -27,16 +27,19 @@
                 
                 <span onclick="openNav()" class="menu">&#9776;</span>
                 <span class="add">&#10011;</span>
-                <h1 class="title"><span class="small">i</span><span class="big">L</span><span class="small">AB</span><span class="big">C</span><span class="small">HECKER</span></h1>
+                <h1 class="title"><span class="small">i</span><span class="big" id="lab">L</span><span class="small" id="lab">AB</span><span class="big" id="checker">C</span><span class="small" id="checker">HECKER</span></h1>
                 <h3 class="page-name">History</h3>
             </div>
         </header>
         
         <div id="second-layer">
-
+            <button type="button" onclick="generateReports()">LOAD EM REPORTS</button>
         </div>
         
         <div class="main">
+            <div id="logs">
+            
+            </div>
         </div>
     </body>
 </html>
