@@ -150,6 +150,58 @@ function saveApparatus() {
         form.reset();
     } 
 }
+function search() {
+    var innerCon, filter, outerCon, inner, a, i;
+    innerCon = document.getElementById("myInput");
+    filter = innerCon.value.toUpperCase();
+    outerCon = document.getElementById("showList");
+    inner = outerCon.getElementsByTagName("a");
+    for (i = 0; i < inner.length; i++) {
+        a = inner[i].getElementsByTagName("button")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            inner[i].style.display = "";
+        } else {
+            inner[i].style.display = "none";
+
+        }
+    }
+}
+
+function find() {
+    var innerCon, filter, outerCon, inner, a, i;
+    innerCon = document.getElementById("sean");
+    filter = innerCon.value.toUpperCase();
+    outerCon = document.getElementById("checkouts");
+    inner = outerCon.getElementsByTagName("button");
+    for (i = 0; i < inner.length; i++) {
+        a = inner[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            inner[i].style.display = "";
+        } else {
+            inner[i].style.display = "none";
+
+        }
+    }
+}
+
+function toggleInfo(e){ 
+        var leInfo = e.nextSibling;
+        var displaySetting = leInfo.style.display;
+        //var apparatus = getApparatusJSON(apparatusId);
+	    //var quantity = document.getElementById("quantity-" + apparatusId).value = '1';
+        
+        var infoButton = document.getElementsByClassName('gen');
+
+        if (displaySetting == 'block') { 
+          leInfo.style.display = 'none';
+          infoButton.innerHTML = 'Show info';
+        }
+        else { 
+          leInfo.style.display = 'block';
+          infoButton.innerHTML = 'Hide info';
+        }
+}
+		
 
 function cancelTransaction(){
     location.reload();
