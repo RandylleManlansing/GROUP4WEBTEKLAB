@@ -121,9 +121,43 @@ function checkout(apparatusId, userid, quantity, classcode){
 }
 
 function save(){
-	for (var i = 0; i < checkoutItems.length; i++) {
-		checkout(checkoutItems[i].apparatusId, document.getElementById('idnum').value, checkoutItems[i].quantity, document.getElementById('classCode').value)
+    var idNumber = document.getElementById('idnum').value
+    var cCode = document.getElementById('classCode').value
+    if (cCode==="" || idNumber===""){
+      alert("Please Fill All Required Fields");
+      return false;
+    }else if (isNaN(idNumber)){
+        alert("Invalid input");
+        return false;
+    }else{
+		for (var i = 0; i < checkoutItems.length; i++) {
+            checkout(checkoutItems[i].apparatusId, idNumber, checkoutItems[i].quantity, cCode)
+		}
+function delete_row(r, appId){
+    var i = r.parentNode.parentNode.rowIndex;
+    document.getElementById("sTable").deleteRow(i);
+	deleteCheckoutRow(appId);
+}
+	    
+function generateCheckinTableForUser(user, container){
+	var html = "<br/><h1 class='h1StyleCheckIn'>Check-In Items for </h1><br/>" + "<table style='width: 100%'>" + 
+	"<tr class='trStyle'>" +
+	   "<td class='tdASumStyle'>" + "Apparatus" + "</td>" +
+		"<td class='tdASumStyle'>" + "Checkout Quantity" + "</td>" +
+		"<td class='tdASumStyle'>" + "Checkin Quantity" + "</td>" +
+    "</tr>";
+	for (var i = 0; i < parseInt(localStorage.getItem("APPARATUS_ID_COUNTER")) ; i++) {
+		var item = JSON.parse(localStorage.getItem(i));
+		if (item.userid == user){
+			html += "<tr>" + 
+			"<td class='tdASumStyle'>" + getApparatus(item.apparatusId).name + "</td>" + 
+			"<td class='tdASumStyle'>" + item.quantity  + "</td>" +
+			"<td class='tdASumStyle'>" + "<input type='text' class='qBoxCheckIn' value=" + item.quantity + " />" + "</td>" + 
+		"</tr>";
+		}
 	}
+	html += "</table>";
+	container.innerHTML = html;
 }
 
 function saveApparatus() {
@@ -201,6 +235,8 @@ function toggleInfo(e){
           infoButton.innerHTML = 'Hide info';
         }
 }
+		
+
 		
 
 function cancelTransaction(){
