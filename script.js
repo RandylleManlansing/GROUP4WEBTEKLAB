@@ -70,6 +70,54 @@ function loadApparatusList(){
     leDiv.insertAdjacentHTML('afterbegin', hString);        
 }
 
+function editQuantity(){
+    var showSomething = document.getElementById('showSomething');
+    var div = document.getElementById('newpost');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+}
+
+function getCheckouts(){
+	var dict = {};
+	var innerHTML = "";
+	for (var i = 0; i < parseInt(localStorage.getItem("APPARATUS_ID_COUNTER")) ; i++) {
+		var item = JSON.parse(localStorage.getItem(i));
+		if (dict[item.userid] == null || dict[item.userid] == 'undefined'){
+			dict[item.userid] = new Array();
+		}
+		dict[item.userid].push(item);
+	}
+	console.dir(dict);
+	var keys = [];
+	for (var key in dict) {
+	  if (dict.hasOwnProperty(key)) {
+		keys.push(key);
+	  }
+	}
+	for (var key in keys){
+		console.log("key: " + key);
+		var hasItems = hasCheckoutItem(keys[key]) ? "*" : "";
+		innerHTML += "<button>" + "<a href='check-in.html?user=" +  keys[key] + "' class='anchorCheckOutStyle'>" + keys[key] + hasItems + "</a>" +"</button><br>";
+		var array = dict[keys[key]];
+	}
+	
+	return innerHTML;
+}
+
+function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    location.search.substr(1).split("&").forEach(function (item) {
+        tmp = item.split("=");
+        if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+    });
+    return result;
+}
+
 function CheckAndLoad(){
     var list = document.getElementById("showList");
        if(list==null || list.innerHTML == ''){
