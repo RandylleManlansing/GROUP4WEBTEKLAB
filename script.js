@@ -1,11 +1,19 @@
 var checkoutItems = new Array();
+var checkinItems = new Array();
+var jsonData;
 
 window.onload = function () {
 	var data = localStorage.getItem("apparatusArray");
-	if (data == null || data == 'undefined' || data == '' ){
+	if (data == null || data == "undefined" || data == "" ){
 		loadJSON();
-	}
-	document.getElementById("main").innerHTML = getCheckouts();
+	}else{
+	   jsonData = JSON.parse(localStorage.getItem("apparatusArray"))["apparatusArray"];
+	   var checkouts = document.getElementById("checkouts");
+	   if (checkouts != null){
+		document.getElementById("checkouts").innerHTML = getCheckouts();
+        }
+	   loadApparatusList();
+    }
 };
 
 function loadJSON() {
@@ -16,25 +24,17 @@ function loadJSON() {
 		if (request.readyState == XMLHttpRequest.DONE ) {
 			var jsonData = JSON.parse(request.response);
         		    if(localStorage.getItem("apparatusArray") == undefined)
-          		  //localStorage.setItem("apparatusArray", JSON.stringify(jsonSampleDefault));
-           		   	 localStorage.setItem('apparatusArray', request.response);
-           			 localStorage.setItem("APPARATUS_ID_COUNTER", 0);
+           		    localStorage.setItem('apparatusArray', request.response);
+           		    localStorage.setItem("APPARATUS_ID_COUNTER", 0);
+       		  	    if (document.getElementById("checkouts").innerHTML != null){
+				document.getElementById("checkouts").innerHTML = getCheckouts();	
+			}
+			jsonData = JSON.parse(localStorage.getItem("apparatusArray"))["apparatusArray"];
+			loadApparatusList();
         }
     };
     request.send();
-    loadJSON();
 }
-
-function loadJSON() {
-    var request = new XMLHttpRequest();
-    request.open("GET", "file.json", true);
-    request.setRequestHeader("Content-type", "application/json");
-    request.onreadystatechange = function() {
-        if (request.readyState == XMLHttpRequest.DONE ) {
-            var jsonData = JSON.parse(request.response);
-
-var a = localStorage.getItem("apparatusArray");
-var b = JSON.parse(a)["apparatusArray"];
 
 function GenerateList(){
     var htmlString = "";
@@ -42,13 +42,33 @@ function GenerateList(){
     var ID = 1;
     var listDiv = document.getElementById('showList');
 	var jsonData = JSON.parse(localStorage.getItem("apparatusArray"));
-        
-    for (var i = 0; i < jsonData["apparatusArray"].length ; i++) {
-        htmlString += "<button id='button-" +  jsonData["apparatusArray"][i].id + "' class='app infoButton' onclick = 'addRow(" + jsonData["apparatusArray"][i].id + ")'>"+ jsonData["apparatusArray"][i].name + "</button>" + "<div id='newpost'>" + "<input type='number' name='quantity' min='1' max='100' class='quantity' id='quantity-" + jsonData["apparatusArray"][i].id + "'>" + "</div>"+ "<br>";   
+     or (var i = 0; i < jsonData["apparatusArray"].length ; i++) {
+		var id = jsonData["apparatusArray"][i].id;
+        htmlString += 
+            "<a href = '#'>"+"<button id='button-" +  id + "' class='app' onclick = 'toggleInfo(this)'>"+ jsonData["apparatusArray"][i].name + "</button>" + 
+            "<div style='display:none' id='newpost'>" + "<input type='number' required value='1' name='quantity' min='1' max='100' class='quantity' id='quantity-" + id + "'>" + 
+                "<button id='confirm-" +  id + "' class='confirmB' onclick='addRow(" + id + ")'>" + "Confirm" + "</button>" +
+            "</div>"+ "</a>"+"<br>";   
     }
     listDiv.insertAdjacentHTML('afterbegin', htmlString);        
 }
 
+function loadApparatusList(){
+    var hString = "";
+    var checklist;
+    var leDiv = document.getElementById('showList');
+	var jsonlsData = JSON.parse(localStorage.getItem("apparatusArray"));
+
+    for (var i = 0; i < jsonlsData["apparatusArray"].length ; i++) {
+		var idApp = jsonlsData["apparatusArray"][i].id;
+        hString += 
+            "<a href = '#' style =  'text-decoration: none'>" +"<button id='button-" +  idApp + "' class='app infoButton' onclick = 'toggleInfo(this)'>"+ jsonlsData["apparatusArray"][i].name + "</button>" +
+            "<div style='display:none' id='newpost'>" +"<span class = 'format'>"+ "Category: " +  jsonlsData["apparatusArray"][i].category + "<br>" + "Stock Available: "+  jsonlsData["apparatusArray"][i].stock + "<br>" +
+			"Type: "+  jsonlsData["apparatusArray"][i].type + "<br>" +"</span>"+
+          "</div>"+ "</a>" + "<br>";   
+    }
+    leDiv.insertAdjacentHTML('afterbegin', hString);        
+}
 
 function CheckAndLoad(){
     var list = document.getElementById("showList");
@@ -133,6 +153,42 @@ function save(){
 		for (var i = 0; i < checkoutItems.length; i++) {
             checkout(checkoutItems[i].apparatusId, idNumber, checkoutItems[i].quantity, cCode)
 		}
+	  
+function getCurrentUser(){
+	return localStorage.getItem("user");
+}
+
+function setCurrentUser(user){
+localStorage.setItem("user", user);
+}
+
+function hasCheckoutItem(apparatusId){
+    for (var i = 0; i < checkoutItems.length; i++){
+        if (checkoutItems[i].apparatusId == apparatusId){
+            return true;
+        }
+    }
+    return false;
+}
+
+function addCheckoutItem(appId, quan){
+    checkoutItems.push({apparatusId:appId, quantity:quan});
+}
+
+
+function addCheckoutItem(appId, quan){
+	checkoutItems.push({apparatusId:appId, quantity:quan});
+}
+function deleteCheckoutRow(appId){
+	for (var i = 0; i < checkoutItems.length; i++){
+		if (checkoutItems[i].apparatusId == appId){
+			checkoutItems.splice(i, 1);
+			return true;
+		}
+	}
+	return false;
+}
+	    
 function delete_row(r, appId){
     var i = r.parentNode.parentNode.rowIndex;
     document.getElementById("sTable").deleteRow(i);
